@@ -1,0 +1,50 @@
+train:
+  num_epoch: 120 
+  optimizer:
+    mode: 'adamw' 
+    param:
+      lr: 0.002 
+
+  loss:
+    name: ['grad', 'smooth_l1'] 
+    grad:
+      reduction: none
+      weight: 2.
+    smooth_l1:
+      reduction: none
+      weight: 1.0
+      beta: 0.1
+
+    TV: True 
+    TV_weight: 2
+
+---
+model:
+  name: nerf
+  device: 'cuda:5'
+  hidden_features: 16
+  hidden_layers: 4 
+  out_features: 1
+  skips: [2] 
+  in_features: 3 
+
+  full_resolution: False 
+  res_ratio_xy: 0.6 
+  res_ratio_z: 0.6
+  aberration: True
+
+---
+log:
+  name: 'Bio_sample_exp' 
+  summary_interval: 100
+  val_interval: ~
+  chkpt_interval: 120 
+  chkpt_dir: 'chkpt_INR'
+  log_dir: 'logs_INR'
+  show_last: True
+
+---
+load:
+  network_chkpt_path: ~ 
+  resume_state_path: ~
+

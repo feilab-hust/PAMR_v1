@@ -1,0 +1,42 @@
+LEDs:
+    delta_z: 8.0                       
+    LED_mode: single 
+    multi_mode: ~
+
+---
+system:
+  dz: 125
+  focus_slice: 75                  
+  oNA: 0.95                         
+  spsize: 7.52                     
+  Mag: 40.                         
+
+---
+dataset:
+  path_dir: 'bio_dataset'              
+  name_head: bio_cell.tif         
+  recon_frames: ~         
+
+---
+recon:
+  mod: 'transmission'                      
+  forward_mod: 'Multi_Born'         
+  grad: 'dwt'   
+
+  orig_size: [1500, 1500]              
+  cut_index: [460, 550]              
+
+  max_iters: 40                      
+  step_size: 10                      
+  step_size_pupil: 2  
+  update_pupil: True                 
+
+  imsize: 350                     
+  stack_num: 80                      
+
+  threshold: 180                    
+  pad: 20                             
+
+  save_path: 'Bio_sample_exp' 
+  post_suffix: ''
+

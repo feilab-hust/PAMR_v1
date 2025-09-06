@@ -1,0 +1,48 @@
+LEDs:
+    NC_all: 6  
+    LEDs_per_circle: [1, 6, 12, 12, 18, 18] # center LED is not used for reconstruction
+    sin_list: [0.0, 0.40, 0.52, 0.69, 0.80, 0.90]
+    R: 75.0                            
+    delta_z: 8.0                       
+    LED_mode: single
+    multi_mode: ~
+    idx_selected: ~
+
+---
+system:
+  Lambda: 0.465                    
+  recon_depth: 40.                   
+  dz: 155                           
+  n_media: 1.33                     
+  focus_slice: 31                 
+  oNA: 0.95                        
+  spsize: 7.52                     
+  Mag: 40.                         
+
+---
+dataset:
+  path_dir: ''              
+  name_head: ~
+  recon_frames: ~       
+    
+---
+recon:
+  data_mod: 'exp'                   
+  device: 'cuda:2'                    
+  mod: 'transmission'                   
+  forward_mod: 'Multi_Born'      
+  grad: 'dwt' 
+  oblique_factor: False
+  delta_h: 0.                        
+  z_plane: 0.                        
+  rotate_degree: 1.                 
+  start_index: 1                 
+  frames: 1                              
+  
+  orig_size: [1500, 1500]              
+  cut_index: [464, 559]
+  imsize: 480                     
+  stack_num: 80                   
+  threshold: 180                   
+  pad: 20                         
+  update_pupil: True                    

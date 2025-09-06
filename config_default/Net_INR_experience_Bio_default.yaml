@@ -1,0 +1,83 @@
+data:
+  train_dir: 'dataset/meta/train'
+  test_dir: 'dataset/meta/test'
+  file_format: '*.file_extension' # for self-designed dataset
+  divide_dataset_per_gpu: true
+
+---
+train:
+  random_seed: 42
+  num_epoch: 120
+  num_workers: 0
+  batch_size: 1
+  optimizer:
+    mode: 'adam'
+    param:
+      lr: 0.002 
+      betas:
+        - 0.9
+        - 0.999
+      weight_decay: 0.0001
+      amsgrad: False
+    scheduler:
+      mode: ~ 
+#     ''' CosineAnnealingWarm '''
+      T_0: 300
+      T_mult: 2
+      min_lr_ratio: 0.5
+#     ''' MultiStep '''
+      decay_step: [10, 50, 150]
+#      decay_step: [50, 150, 200]
+      decay_gamma: 0.5
+
+  loss:
+    name: ['l1'] 
+    l1:
+      reduction: none
+      weight: 0.0
+    
+  dist:
+    master_addr: 'localhost'
+    master_port: '12355'
+    mode: 'gloo' 
+    gpus: [0] 
+
+---
+test:
+  num_workers: 0
+  batch_size: 64
+
+---
+model:
+  name: nerf
+  device: 'cuda:0'
+  hidden_features: 16
+  hidden_layers: 4
+  out_features: 1
+  skips: [2]
+  in_features: 3
+
+  full_resolution: False
+  res_ratio_xy: 0.6 
+  res_ratio_z: 0.6
+
+  aberration: True
+---
+log:
+  print_yaml: False
+  name: ' ' 
+  use_tensorboard: False
+  use_visdom: True
+  summary_interval: 80 
+  val_interval: 5
+  chkpt_interval: ~ 
+  chkpt_dir: 'chkpt_INR'
+  log_dir: 'logs_INR'
+  show_last: True
+
+---
+load:
+  network_chkpt_path: ~
+  strict_load: false
+  resume_state_path: ~
+

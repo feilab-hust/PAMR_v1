@@ -1,0 +1,7 @@
+logs_INR/
+chkpt_INR/
+runs/
+Bio_sample_exp/
+bio_dataset/
+**/__pycache__/
+*/__pycache__/
