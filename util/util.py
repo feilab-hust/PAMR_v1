@@ -47,7 +47,7 @@ def TV_xy(img, h):
 def TV_3d(img, h):
     tv_z = TV_z(img, h) + 0.5 * TV_z(img, h * 2)
     tv_xy = TV_xy(img, h) + 0.5 * TV_xy(img, h * 2)
-    return tv_z + tv_xy
+    return (tv_z + tv_xy) / max(0.1, (tv_z + tv_xy).max().detach())
 
 def real_constrain(X, n):
     real_X = torch.real(X)

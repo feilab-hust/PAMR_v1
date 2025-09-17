@@ -16,7 +16,7 @@ train:
       beta: 0.1
 
     TV: True 
-    TV_weight: 2
+    TV_weight: 0.5
 
 ---
 model:
