@@ -8,7 +8,7 @@ system:
   dz: 125
   focus_slice: 75                  
   oNA: 0.95                         
-  spsize: 7.52                     
+  spsize: 3.76                     
   Mag: 40.                         
 
 ---
@@ -24,17 +24,9 @@ recon:
   grad: 'dwt'   
 
   orig_size: [1500, 1500]              
-  cut_index: [460, 550]              
-
-  max_iters: 40                      
-  step_size: 10                      
-  step_size_pupil: 2  
-  update_pupil: True                 
-
+  cut_index: [460, 550]                           
   imsize: 350                     
-  stack_num: 80                      
-
-  threshold: 180                    
+  stack_num: 80                                    
   pad: 20                             
 
   save_path: 'Bio_sample_exp' 

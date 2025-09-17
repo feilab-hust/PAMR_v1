@@ -78,7 +78,7 @@ class multiLayerExperiment():
         self.Upsample = self.hr_imsize / self.imsize
 
         self.dz = self.recon_depth / self.stack_num if self.dz == None else self.dz * 1e-3
-        self.psize = self.spsize * self.imsize / self.hr_imsize
+        self.psize = self.spsize
         self.dkxy = 2 * np.pi / (self.psize * self.HR_imsize)
         self.cutoff = self.oNA * self.k0 / self.dkxy
 

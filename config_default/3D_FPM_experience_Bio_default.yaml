@@ -16,7 +16,7 @@ system:
   n_media: 1.33                     
   focus_slice: 31                 
   oNA: 0.95                        
-  spsize: 7.52                     
+  spsize: 3.76                     
   Mag: 40.                         
 
 ---
