@@ -20,7 +20,7 @@ train:
 
 ---
 model:
-  name: nerf
+  name: PAMR
   device: 'cuda:1'
   hidden_features: 16
   hidden_layers: 4 
@@ -39,8 +39,8 @@ log:
   summary_interval: 100
   val_interval: ~
   chkpt_interval: 120 
-  chkpt_dir: 'chkpt_INR'
-  log_dir: 'logs_INR'
+  chkpt_dir: 'chkpt'
+  log_dir: 'logs'
   show_last: True
 
 ---

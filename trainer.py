@@ -118,18 +118,18 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-Net_c", "--Net_config", type=str, default = r'config/Net_INR_experience_Bio.yaml',
+        "-Net_c", "--Net_config", type=str, default = r'config/Net.yaml',
         help="Net yaml file for config."
     )
     parser.add_argument(
-        "-3D_FPM_c", "--FPM_config", type=str, default = r'config/3D_FPM_experience_Bio.yaml',
+        "-3D_FPM_c", "--FPM_config", type=str, default = r'config/3D_FPM.yaml',
         help="3D_FPM yaml file for config."
     )
     args = parser.parse_args()
 
     ''' default config (change less often) '''
-    hp_net = load_hparam(r'config_default/Net_INR_experience_Bio_default.yaml')
-    hp_fpm = load_hparam(r'config_default/3D_FPM_experience_Bio_default.yaml')
+    hp_net = load_hparam(r'config_default/Net_default.yaml')
+    hp_fpm = load_hparam(r'config_default/3D_FPM_default.yaml')
 
     ''' config (change more often) '''
     hp_net_change = load_hparam(args.Net_config)
@@ -172,7 +172,7 @@ if __name__ == "__main__":
     set_random_seed(42)
 
     from model.model_arch import Net_arch
-    from model.model_INR import Model
+    from model.model_pamr import Model
     from util.train_model import train_model
     from util.test_model import test_model
     from util.writer import Writer

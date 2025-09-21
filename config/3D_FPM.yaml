@@ -25,7 +25,7 @@ recon:
 
   orig_size: [1500, 1500]              
   cut_index: [460, 550]                           
-  imsize: 350                     
+  imsize: 310                     
   stack_num: 65                                    
   pad: 20                             
 

@@ -6,7 +6,7 @@ from model.model_used.utils import *
 from util.register import MODEL_REGISTRY
 from math import pi
 
-@MODEL_REGISTRY.register('nerf_opensourced')
+@MODEL_REGISTRY.register('pamr')
 class NeRF(nn.Module): # Hash + LR + PE
     def __init__(self, hp_net):
 
