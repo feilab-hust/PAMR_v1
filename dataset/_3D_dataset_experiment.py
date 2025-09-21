@@ -3,7 +3,6 @@ from pathlib import Path
 import cv2
 import numpy as np
 import tifffile as tif
-import kornia
 
 from model.Multi_slices import Multi_slices_forward
 from util.util import load_hparam, dwt_

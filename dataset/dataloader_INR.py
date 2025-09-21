@@ -1,7 +1,5 @@
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
-import torch
-import torchvision
 from dataset.dataset_INR import Dataset_INR
 from dataset.utils import DataloaderMode
 

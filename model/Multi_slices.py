@@ -1,10 +1,7 @@
-import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as f
 from util.register import MODEL_REGISTRY
-# from util import *
-# from pytorch_complex import *
 
 @MODEL_REGISTRY.register()
 class Multi_slices_forward(nn.Module):

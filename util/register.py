@@ -1,3 +1,5 @@
+
+
 class Registry():
     """
     The registry that provides name -> object mapping, to support third-party

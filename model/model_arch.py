@@ -1,5 +1,4 @@
 import torch.nn as nn
-import torch.nn.functional as F
 from model.model_used.models import *
 
 class Net_arch(nn.Module):

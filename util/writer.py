@@ -1,8 +1,6 @@
-import numpy as np
 import torch
 from tensorboardX import SummaryWriter
 from util.util import Nor
-# import wandb
 
 
 class Writer(SummaryWriter):
