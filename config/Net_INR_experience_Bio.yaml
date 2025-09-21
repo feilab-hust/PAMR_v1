@@ -21,7 +21,7 @@ train:
 ---
 model:
   name: nerf
-  device: 'cuda:7'
+  device: 'cuda:1'
   hidden_features: 16
   hidden_layers: 4 
   out_features: 1
