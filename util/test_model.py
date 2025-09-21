@@ -34,11 +34,8 @@ def test_model(hp, model, test_loader, writer, logger, img_name):
         recon_aberration = torch.fft.fftshift(output['recon_aberration']).cpu().numpy() if output['recon_aberration'] is not None else np.zeros_like(output_RI)
 
         save_p_ri = Path(hp.recon.save_path) / f'epoch_{model.epoch}' / 'RI'
-        save_p_ab = Path(hp.recon.save_path) / f'epoch_{model.epoch}' / 'Ab'
         save_p_P = Path(hp.recon.save_path) / f'epoch_{model.epoch}' / 'Pupil'
         save_p_ri.mkdir(parents = True, exist_ok = True)
-        save_p_ab.mkdir(parents = True, exist_ok = True)
         save_p_P.mkdir(parents = True, exist_ok = True)
         tiff.imwrite(save_p_ri / f'RI_{img_name[:-4]}{hp.recon.post_suffix}.tiff', output_RI.transpose(2,0,1))
-        tiff.imwrite(save_p_ab / f'Ab_{img_name[:-4]}{hp.recon.post_suffix}.tiff', output_Ab.transpose(2,0,1)) 
         tiff.imwrite(save_p_P / f'Pupil_{img_name[:-4]}{hp.recon.post_suffix}.tiff', recon_aberration)

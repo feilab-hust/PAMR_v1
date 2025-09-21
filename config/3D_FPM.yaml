@@ -14,7 +14,7 @@ system:
 ---
 dataset:
   path_dir: 'bio_dataset'              
-  name_head: bio_cell.tif         
+  name_head: bio_U2OS_cell.tif         
   recon_frames: ~         
 
 ---

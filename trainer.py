@@ -56,7 +56,7 @@ def train_loop(rank, hp_fpm, hp_net, world_size=0, vis = None):
     train_loader = create_dataloader(hp_fpm, hp_net, DataloaderMode.train, rank, world_size)
 
     # init Model
-    net_arch = Net_arch(hp_net, post_name = 'opensourced')
+    net_arch = Net_arch(hp_net)
     loss_f = loss_used(hp_net)
     forward_function = train_loader.dataset.forward_function
     Num_LEDs = train_loader.dataset.Num_LED

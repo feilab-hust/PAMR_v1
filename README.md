@@ -47,59 +47,33 @@ This repository is developed based on the paper *Physics-informed meta neural re
 
 ```
 PAMR_OpenSourced/
-├── chkpt_INR/               # Saved model checkpoints for multiple tasks
-├── config/                  # Model definitions using yaml
-├── dataset/                 # dataset used
-├── loss/                    # defined loss funcitons
-├── model/                   # defined model structure
-├── util/                    # utility functions
-├── Test_AC.py               # Main script
-├── AIMS_enviroment.yaml     # Python dependencies for rapid environment deployment
-└── README.md                # Project documentation
+├── bio_dataset/                   # dataset used (.tif)
+├── chkpt/                         # Saved model checkpoints for multiple tasks
+├── config/                        # Model definitions using yaml
+├── loss/                          # defined loss funcitons
+├── model/                         # defined model structure
+├── util/                          # utility functions
+├── logs/                          # logs folder
+├── trainer.py                     # Main script for reconstruction
+├── AIMS_enviroment.yaml           # Python dependencies for rapid environment deployment
+└── README.md                      # Project documentation
 ```
+
 # Usage
-## Model inference for quick validation
+## 3D Refractive Index (RI) reconstruction for U2OS cells
 
 1. Environment installation and activation
-2. Download or prepare the trained model checkpoints (**【Google driven】**) and place in `Checkpoints/`.
-3. Download the dataset (**【Google driven】**) and place it in `datatest/`.
-4. Run the following commands for quick model inference, the corresponding prediction results will be output on the terminal.
+2. Download the images of U2OS cells under multiple illumiination angles (**[Google driven](https://drive.google.com/file/d/1XfFNHBVSbp-IelKVBiZDXt7CszrD53e0/view?usp=sharing)**) and place in `bio_dataset/`.
+3. Run the following commands for quick reconstruction, the corresponding prediction results will be saved in `Bio_sample_exp/`.
 
-   #### $\blacksquare$ Example 1: Binary classification between Ctrl and etoposide-induced (Eto) senescence using U2OS cell
-      ```bash
-      python Test_AC.py --Net_config 'config/Net_AC_mito_Ctrl&Eto_U2OS.yaml'
-      ```
-
-   #### $\blacksquare$ Example 2: Binary classification between Ctrl and doxorubicin-induced (Doxo) senescence using U2OS cell
-      ```bash
-      python Test_AC.py --Net_config 'Net_AC_mito_Ctrl&Doxo_U2OS.yaml'
-      ```
-
-   #### $\blacksquare$ Example 3: Binary classification between Ctrl and antimycin A-induced (Anti) senescence using U2OS cell
-      ```bash
-      python Test_AC.py --Net_config 'Net_AC_mito_Ctrl&Anti_U2OS.yaml'
-      ```
-
-   #### $\blacksquare$ Example 4: Binary classification between Ctrl and hydrogen peroxide-induced (H2O2) senescence using U2OS cell
-      ```bash
-      python Test_AC.py --Net_config 'Net_AC_mito_Ctrl&OS_U2OS.yaml'
-      ```
-
-   #### $\blacksquare$ Example 5: Binary classification between Ctrl and etoposide-induced senescence for cross multiple cell types (BHK21, HeLa, ARPE-19)
-      ```bash
-      python Test_AC.py --Net_config 'Net_AC_mito_Ctrl&Eto_crossCell.yaml'
-      ```
-
-   #### $\blacksquare$ Example 6: multi-senescent classification between Ctrl and senescent cells induced by four distinct senescence mechanisms (Doxo, Eto, H2O2, Anti)
-      ```bash
-      python Test_AC.py --Net_config 'Net_AC_mito_MultiSeneClass.yaml'
-      ```
-
+   ```bash
+   python trainer.py
+   ```
 
 # Citation
 If you use the repository or relevant data, please cite the corresponding paper:
 ```
-Mao, S., Sun, M., Liu, Y., Li, D., Fei, P., Artificial Intelligence for Mitochondria-based Senescence detection (AIMS) across diverse cellular contexts. 
+Sun, M., Zhong, F., Mao, S., Liu, Y., Zhang, Z., Li, D., Liu, B., Fei, P., Physics-informed meta neural representation for high-fidelity, aberration-corrected, sparse-view Fourier ptychographic tomography. 
 ```
 
 # Contact
