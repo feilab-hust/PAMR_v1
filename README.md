@@ -55,7 +55,7 @@ PAMR_OpenSourced/
 ├── util/                          # utility functions
 ├── logs/                          # logs folder
 ├── trainer.py                     # Main script for reconstruction
-├── AIMS_enviroment.yaml           # Python dependencies for rapid environment deployment
+├── PAMR_enviroment.yml            # Python dependencies for rapid environment deployment
 └── README.md                      # Project documentation
 ```
 
