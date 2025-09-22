@@ -6,7 +6,7 @@ dependencies:
   - python=3.10.14=h955ad1f_1
 
   - pip:
-      - numpy==1.24.6
+      - numpy==1.24.4
       - einops==0.8.1
       - imageio==2.35.1
       - jinja2==3.1.3
