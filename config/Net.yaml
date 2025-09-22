@@ -1,5 +1,5 @@
 train:
-  num_epoch: 120 
+  num_epoch: 100 
   optimizer:
     mode: 'adamw' 
     param:
