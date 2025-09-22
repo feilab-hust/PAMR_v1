@@ -14,7 +14,7 @@ This repository is developed based on the paper *Physics-informed meta neural re
  - Linux and windows 10/11 should be able to run the code, but the code has been only teseted on Linux (Ubuntu 24.04.1 LTS)
  - Python 3.10
  - CUDA 11.8 and cuDNN 8.7
- - Graphics: NVDIA RTX 3090, A6000 or better 
+ - Graphics: NVDIA RTX 4090, A6000 or better 
 ```
 
 - Running environment requirements 
