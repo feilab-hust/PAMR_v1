@@ -14,7 +14,7 @@ system:
 ---
 dataset:
   path_dir: 'bio_dataset'              
-  name_head: bio_U2OS_cell.tif         
+  name_head: U2OS_cell.tif         
   recon_frames: ~         
 
 ---
@@ -23,9 +23,9 @@ recon:
   forward_mod: 'Multi_Born'         
   grad: 'dwt'   
 
-  orig_size: [1500, 1500]              
-  cut_index: [460, 550]                           
-  imsize: 310                     
+  orig_size: [250, 250]              
+  cut_index: [25, 25]                           
+  imsize: 200                     
   stack_num: 65                                    
   pad: 20                             
 

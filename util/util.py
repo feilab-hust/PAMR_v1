@@ -62,11 +62,9 @@ def dwt_(x):
     x2 = x02[:, :, :, 0::2]
     x3 = x01[:, :, :, 1::2]
     x4 = x02[:, :, :, 1::2]
-    x_LL = x1 + x2 + x3 + x4
     x_HL = -x1 - x2 + x3 + x4
     x_LH = -x1 + x2 - x3 + x4
-    x_HH = x1 - x2 - x3 + x4
-    return x_LL, torch.cat([x_LH, x_HL], dim = 1)
+    return [torch.cat([x_LH, x_HL], dim = 1)]
     # return x_LL, torch.cat([x_LH, x_HL, x_HH], dim = 1)
 
 class loss_moniter_dict():

@@ -63,7 +63,7 @@ PAMR_OpenSourced/
 ## 3D Refractive Index (RI) reconstruction for U2OS cells
 
 1. Environment installation and activation
-2. Download the images of U2OS cells under multiple illumiination angles (**[Google driven](https://drive.google.com/file/d/1XfFNHBVSbp-IelKVBiZDXt7CszrD53e0/view?usp=sharing)**) and place in `bio_dataset/`.
+2. Download the images of U2OS cells under multiple illumiination angles (**[Google driven](https://drive.google.com/file/d/1n3tYOVb3Dc--A-Eux5YSmGOlaOzNs8_d/view?usp=sharing)**) and place in `bio_dataset/`.
 3. Run the following commands for quick reconstruction, the corresponding prediction results will be saved in `Bio_sample_exp/`.
 
    ```bash

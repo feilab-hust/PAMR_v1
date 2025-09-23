@@ -21,7 +21,7 @@ train:
 ---
 model:
   name: PAMR
-  device: 'cuda:1'
+  device: 'cuda:0'
   hidden_features: 16
   hidden_layers: 4 
   out_features: 1

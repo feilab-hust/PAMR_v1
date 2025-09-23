@@ -56,18 +56,21 @@ class Multi_slices_forward(nn.Module):
         return output
 
     def _propegate_to_last_slice_Multi_Born(self, planwave_each, oblique_factor):
-        incidence = torch.fft.fft2(planwave_each)
+        planwave_each = torch.fft.fft2(planwave_each)
 
         for i in range(int(self.stack_num)):
-            U_tmp = incidence * self.prop_kernel
-            scater_born = self.Green_tmp * torch.fft.fft2(torch.fft.ifft2(incidence) * self.sample[...,i] * self.dz) 
+            scater_born = self.Green_tmp * torch.fft.fft2(torch.fft.ifft2(planwave_each) * self.sample[...,i]) * self.dz
            
             if oblique_factor is not None:
                 scater_born = scater_born * oblique_factor
                 
-            incidence = U_tmp + scater_born
+            planwave_each *= self.prop_kernel
+            planwave_each += scater_born
 
-        return incidence 
+        del scater_born  # 可选，显式删除
+        # torch.cuda.empty_cache()      # 可选，释放缓存
+        
+        return planwave_each 
 
     def _propegate_to_center_focus_slice(self, incidence_last_slice):
         prop_kernel_center = torch.conj(self.prop_kernel ** (self.focus_slice))
